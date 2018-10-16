@@ -108,6 +108,8 @@ def upload_file():
 
         nice_cx.print_summary()
 
+        return upload_message
+
 
 @api.post('/v1/upload/excel')
 def upload_file():

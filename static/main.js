@@ -127,6 +127,11 @@ function submitData() {
 
 }
 
+function onSuccess(resultsText) {
+    var resultsDiv = document.getElementById('resultsDiv');
+    var resultsClean = resultsText.replace("v2", "#");
+    resultsDiv.innerHTML = "<a href='" + resultsClean + "'>" + resultsClean + "</a>";
+}
 
 function checkTable() {
     var returnValue = {};

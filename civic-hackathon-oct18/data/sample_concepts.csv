@@ -1,0 +1,4 @@
+id:ID,:LABEL,preflabel,synonyms:IGNORE,name,description
+DOID:0060728,DISO,NGLY1-deficiency,congenital disorder of deglycosylation|congenital disorder of glycosylation type Iv|deficiency of N-glycanase 1|NGLY1-CDDG|Alacrimia-choreoathetosis-liver dysfunction syndrome,NA,Human disease
+HGNC:17646,GENE,NGLY1,CDDG|CDG1V|N-glycanase 1|NGLY1|PNG1|PNGase,N-glycanase 1,gene of the species Homo sapiens
+REACT:R-HSA-532668,PHYS,N-glycan trimming in the ER and Calnexin/Calreticulin cycle,Reactome:R-HSA-532668,N-glycan trimming in the ER and Calnexin/Calreticulin cycle,NA

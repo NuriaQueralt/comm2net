@@ -193,7 +193,7 @@ function confirmFileSubmitNode(){
             var tr = document.createElement('tr');
             var td = document.createElement('td');
             var nodeSelectText = "<select id='nodeId'  >\n" +
-                "  <option>--Select value type--</option>\n";
+                "  <option>--Select node id column--</option>\n";
             for (var i = 0; i < columns.length; i++) {
                 nodeSelectText += "  <option tag='" + columns[i] + "'>" + columns[i] + "</option>\n";
             }

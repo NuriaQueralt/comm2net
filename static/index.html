@@ -1,0 +1,69 @@
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-12">
+                <div class="jumbotron" ng-show="viewGraph">
+                    <h1>Community contribution to knowledge networks</h1>
+                    <p>Upload your network for review by selecting your file and providing information on which column is used for node, edge and network information</p>
+                </div>
+                <div ng-view ng-cloak autoscroll="true"></div>
+                <!--<div class="well" ng-show="!viewGraph">
+                    <h3>Directed Paths Inspector</h3>
+                    <div class="btn btn-default btn-sm pull-right" style="margin-top: -20px;" ng-click="viewGraph=!viewGraph">
+                        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                    </div>
+                </div>-->
+                <div class="row" ng-show="viewGraph">
+                    <div class="col-lg-12">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Select edge file to upload:
+                            <input type="file" name="fileToUpload" id="fileToUpload" onchange="confirmFileSubmit();">
+                        </form>
+                    </div>
+                </div>
+                <div class="row" ng-show="viewGraph">
+                    <div class="col-lg-12">
+                        <div id="previewTableDiv" name="previewTableDiv">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row" ng-show="viewGraph">
+                    &nbsp;
+                </div>
+
+                <div class="row" ng-show="viewGraph">
+                    <div class="col-lg-12">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Select node file to upload:
+                            <input type="file" name="fileToUploadNode" id="fileToUploadNode" onchange="confirmFileSubmitNode();">
+                        </form>
+                    </div>
+                </div>
+                <div class="row" ng-show="viewGraph">
+                    <div class="col-lg-12">
+                        <div id="previewTableDivNode" name="previewTableDivNode">
+                        </div>
+                        <input type="button" onclick="submitData();" value="Submit">
+                        <input type="button" onclick="checkTable();" value="Check Data">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

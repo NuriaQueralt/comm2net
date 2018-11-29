@@ -1,9 +1,13 @@
 <html>
 <head>
     <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="main2.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -21,19 +25,45 @@
                         <i class="fa fa-angle-double-down" aria-hidden="true"></i>
                     </div>
                 </div>-->
-                <div class="row" ng-show="viewGraph">
-                    <div class="col-lg-12">
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                            Select edge file to upload:
-                            <input type="file" name="fileToUpload" id="fileToUpload" onchange="confirmFileSubmit();">
-                        </form>
-                    </div>
-                </div>
-                <div class="row" ng-show="viewGraph">
-                    <div class="col-lg-12">
-                        <div id="previewTableDiv" name="previewTableDiv">
+                <div style="padding: 10px; border: 2px solid #C0C0C0; border-radius: 10px;">
+                    <h4>Edges</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="edgeSelect" class="yesDisplay">
+                                <form method="post" enctype="multipart/form-data">
+                                    Select edge file to upload:
+                                    <input type="file" name="fileToUpload" id="fileToUpload" onchange="buildPreview();">
+                                </form>
+                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div id="edgeWell" class="noDisplay">
+                                <div class="alert alert-info">
+                                    Now select columns for:
+                                    <h5>Source node</h5>
+                                    <h5>Target node</h5>
+                                    <h5>Edge interaction</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div style="overflow-x: scroll;">
+                                <div id="previewTableDiv" style="padding: 5px; width: 90%" name="previewTableDiv">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--<input type="button" onclick="revealSelections();" value="Show Results">-->
+                        </div>
+                    </div>
+
                 </div>
 
 
@@ -41,20 +71,23 @@
                     &nbsp;
                 </div>
 
-                <div class="row" ng-show="viewGraph">
-                    <div class="col-lg-12">
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                            Select node file to upload:
-                            <input type="file" name="fileToUploadNode" id="fileToUploadNode" onchange="confirmFileSubmitNode();">
-                        </form>
-                    </div>
-                </div>
-                <div class="row" ng-show="viewGraph">
-                    <div class="col-lg-12">
-                        <div id="previewTableDivNode" name="previewTableDivNode">
+                <div style="padding: 10px; border: 2px solid #C0C0C0; border-radius: 10px;">
+                    <h4>Nodes</h4>
+                    <div class="row" ng-show="viewGraph">
+                        <div class="col-lg-12">
+                            <form method="post" enctype="multipart/form-data">
+                                Select node file to upload:
+                                <input type="file" name="fileToUploadNode" id="fileToUploadNode" onchange="confirmFileSubmitNode();">
+                            </form>
                         </div>
-                        <input type="button" onclick="submitData();" value="Submit">
-                        <input type="button" onclick="checkTable();" value="Check Data">
+                    </div>
+                    <div class="row" ng-show="viewGraph">
+                        <div class="col-lg-12">
+                            <div id="previewTableDivNode" name="previewTableDivNode">
+                            </div>
+                            <input type="button" onclick="submitData();" value="Submit">
+                            <!--<input type="button" onclick="checkTable();" value="Check Data">-->
+                        </div>
                     </div>
                 </div>
 

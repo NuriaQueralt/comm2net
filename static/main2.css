@@ -1,0 +1,21 @@
+
+input[type='radio'].greenButton:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: -2px;
+    left: -4px;
+    position: relative;
+    background-color: #4DAE4A;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #4DAE4A;
+}
+
+.noDisplay {
+    display: none;
+}
+
+.yesDisplay {
+}
